@@ -32,7 +32,7 @@ const Navber = () => {
                             {items}
                         </ul>
                     </div>
-                    <a className=" text-3xl font-bold logo">po<span className="text-orange logo">kids</span></a>
+                    <a className=" text-4xl font-bold logo">po<span className="text-orange logo">kids</span></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-10">
