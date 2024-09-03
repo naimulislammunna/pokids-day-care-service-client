@@ -1,87 +1,75 @@
 [
     {
-      "image_url": "https://example.com/daycare1.jpg",
+      "image_url": "https://i.postimg.cc/nhbrF7Xj/blonde-girl-looking-boy-playing.jpg",
       "service_name": "Happy Kids Daycare",
       "price": "$300/month",
       "service_area": "New York, NY",
       "description": "A warm and nurturing environment for kids aged 1-5 with experienced caregivers."
     },
     {
-      "image_url": "https://example.com/daycare2.jpg",
+      "image_url": "https://i.postimg.cc/LsmsfpBm/children-holding-hand-group.jpg",
       "service_name": "Little Explorers Learning Center",
       "price": "$350/month",
       "service_area": "Los Angeles, CA",
       "description": "A creative daycare focused on early childhood education and social development."
     },
     {
-      "image_url": "https://example.com/daycare3.jpg",
+      "image_url": "https://i.postimg.cc/1zM3rjJw/children-preschool-playing.jpg",
       "service_name": "Tiny Tots Daycare",
       "price": "$280/month",
       "service_area": "Chicago, IL",
       "description": "Safe, loving daycare for toddlers and preschoolers with a focus on play-based learning."
     },
     {
-      "image_url": "https://example.com/daycare4.jpg",
+      "image_url": "https://i.postimg.cc/j2B5Jnv1/curious-girl-with-pencil-watching-1.jpg",
       "service_name": "Bright Beginnings Daycare",
       "price": "$320/month",
       "service_area": "Houston, TX",
       "description": "A family-friendly daycare with experienced staff and a stimulating curriculum."
     },
     {
-      "image_url": "https://example.com/daycare5.jpg",
+      "image_url": "https://i.postimg.cc/2SQ6V6WH/front-view-kids-with-halloween-conceptt.jpg",
       "service_name": "Rainbow Kids Childcare",
       "price": "$310/month",
       "service_area": "Miami, FL",
       "description": "A fun and safe environment offering full-time and part-time care for kids aged 2-6."
     },
     {
-      "image_url": "https://example.com/daycare6.jpg",
+      "image_url": "https://i.postimg.cc/65GTxzpx/full-shot-kids-playing-with-wooden-shapes.jpg",
       "service_name": "Creative Minds Daycare",
       "price": "$290/month",
       "service_area": "Seattle, WA",
       "description": "Encouraging creativity and exploration through a variety of educational activities."
     },
     {
-      "image_url": "https://example.com/daycare7.jpg",
+      "image_url": "https://i.postimg.cc/T152GYGJ/full-shot-teacher-watching-kids-learn.jpg",
       "service_name": "Sunshine Kids Academy",
       "price": "$340/month",
       "service_area": "San Francisco, CA",
       "description": "Offering structured learning and outdoor play for preschool-aged children."
     },
     {
-      "image_url": "https://example.com/daycare8.jpg",
+      "image_url": "https://i.postimg.cc/jq1C1BKh/girl-with-down-syndrome-painting-with-colors.jpg",
       "service_name": "Little Sprouts Daycare",
       "price": "$300/month",
       "service_area": "Austin, TX",
       "description": "Providing personalized attention and a fun learning experience in a home-like setting."
     },
     {
-      "image_url": "https://example.com/daycare9.jpg",
+      "image_url": "https://i.postimg.cc/Kj1jzD7L/man-drawing-with-children-home.jpg",
       "service_name": "Bright Futures Childcare",
       "price": "$330/month",
       "service_area": "Orlando, FL",
       "description": "A friendly daycare focused on cognitive and social development through play."
-    },
-    {
-      "image_url": "https://example.com/daycare10.jpg",
-      "service_name": "Tiny Steps Daycare",
-      "price": "$310/month",
-      "service_area": "Denver, CO",
-      "description": "A cozy daycare with small group sizes and a curriculum that supports early learning."
-    },
-    {
-      "image_url": "https://example.com/daycare11.jpg",
-      "service_name": "Happy Hearts Daycare",
-      "price": "$325/month",
-      "service_area": "Atlanta, GA",
-      "description": "Providing love, care, and education for children in a safe and supportive environment."
-    },
-    {
-      "image_url": "https://example.com/daycare12.jpg",
-      "service_name": "Growing Smiles Daycare",
-      "price": "$340/month",
-      "service_area": "Phoenix, AZ",
-      "description": "A vibrant daycare offering early childhood education with a focus on play and learning."
     }
   ]
-  
+
+https://i.postimg.cc/nhbrF7Xj/blonde-girl-looking-boy-playing.jpg
+https://i.postimg.cc/LsmsfpBm/children-holding-hand-group.jpg
+https://i.postimg.cc/1zM3rjJw/children-preschool-playing.jpg
+https://i.postimg.cc/j2B5Jnv1/curious-girl-with-pencil-watching-1.jpg
+https://i.postimg.cc/2SQ6V6WH/front-view-kids-with-halloween-conceptt.jpg
+https://i.postimg.cc/65GTxzpx/full-shot-kids-playing-with-wooden-shapes.jpg
+https://i.postimg.cc/T152GYGJ/full-shot-teacher-watching-kids-learn.jpg
+https://i.postimg.cc/jq1C1BKh/girl-with-down-syndrome-painting-with-colors.jpg
+https://i.postimg.cc/Kj1jzD7L/man-drawing-with-children-home.jpg

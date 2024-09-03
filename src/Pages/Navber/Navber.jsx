@@ -40,8 +40,8 @@ const Navber = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-3">
-                <Link to='/register'><button className="">Resister</button></Link>
-                <Link to='/SignIn'><button className="">Sign In</button></Link>
+                <Link to='/register'><button className="px-4 py-2 rounded-full bg-white">Resister</button></Link>
+                <Link to='/Sign-in'><button className="px-4 py-2 rounded-full bg-white">Sign In</button></Link>
                 </div>
             </div>
         </div>
