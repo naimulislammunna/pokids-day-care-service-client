@@ -7,18 +7,15 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     const {handleRegister, googleLogIn} = useContext(AuthContext);
     const [error, setError] = useState("");
-    // const location = useLocation();
-    // const navigate = useNavigate();
+    const location = useLocation();
+    const navigate = useNavigate();
 
-    // if(loading){
-    //     <div className="w-10 h-10 animate-[spin_1s_linear_infinite] rounded-full border-4 border-r-transparent border-l-transparent border-sky-400 flex justify-center my-20"></div>
-    // }
 
     const handleGoogleLogIn = () =>{
         googleLogIn()
         .then(() => {
             toast.success('Sign In Successfully');
-            // navigate(location.state);
+            navigate(location.state);
         })
         .catch(()=> toast.warn('warning'))
     }
@@ -33,7 +30,7 @@ const Register = () => {
         handleRegister(email, password)
         .then(() => {
             toast.success('Sign In Successfully');
-            // navigate(location.state);
+            navigate(location.state);
             form.reset();
             
         })

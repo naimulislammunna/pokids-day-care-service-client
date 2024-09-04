@@ -5,7 +5,7 @@ const Navber = () => {
     const items = <>
         <NavLink to='/'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Home</button></NavLink>
         <NavLink to='/'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Services</button></NavLink>
-        <NavLink to='/'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Dashboard</button></NavLink>
+        <NavLink to='/add-service'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Dashboard</button></NavLink>
     </>
     return (
         <div className="home-container">
