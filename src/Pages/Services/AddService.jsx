@@ -1,7 +1,11 @@
 import axios from "axios";
+import { useContext } from "react";
 import { toast, ToastContainer } from "react-toastify";
+import { AuthContext } from "../../Auth/AuthProvider";
 
 const AddService = () => {
+    const {userInfo} = useContext(AuthContext);
+    const {displayName, photoURL, email} = userInfo;
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -12,7 +16,7 @@ const AddService = () => {
         const image_url = form.imageUrl.value;
         const description = form.description.value;
 
-         await axios.post('http://localhost:4000/add-service', { service_name,service_area , price,description, image_url })
+         await axios.post('http://localhost:4000/add-service', { service_name,service_area , price,description, image_url, email,  displayName, photoURL })
             .then(() => {
                 toast('Post Complete')
                 form.reset();

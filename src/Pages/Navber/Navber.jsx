@@ -1,10 +1,17 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Auth/AuthProvider";
 
 const Navber = () => {
+    const {userInfo, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut();
+    }
     
     const items = <>
         <NavLink to='/'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Home</button></NavLink>
-        <NavLink to='/'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Services</button></NavLink>
+        <NavLink to='/all-service'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Services</button></NavLink>
         <NavLink to='/add-service'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Dashboard</button></NavLink>
     </>
     return (
@@ -40,8 +47,25 @@ const Navber = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-3">
-                <Link to='/register'><button className="px-4 py-2 rounded-full bg-white">Resister</button></Link>
-                <Link to='/Sign-in'><button className="px-4 py-2 rounded-full bg-white">Sign In</button></Link>
+                {
+                        userInfo ? <>
+                            <button onClick={handleLogOut} className="px-4 py-2 rounded-full bg-white">Sign Out</button>
+                            <h3>{userInfo.displayName}</h3>
+                            <div className="w-10">
+                                <img className="rounded-full"
+                                    alt=""
+                                    src={userInfo.photoURL} />
+                            </div>
+                        </>
+                            :
+                            <>
+                                <Link to='/register'><button className="px-4 py-2 rounded-full bg-white">Resister</button></Link>
+                                <Link to='/Sign-in'><button className="px-4 py-2 rounded-full bg-white">Sign In</button></Link>
+                            </>
+                    }
+
+
+                
                 </div>
             </div>
         </div>

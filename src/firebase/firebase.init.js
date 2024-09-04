@@ -1,15 +1,17 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCyzGWw5RcUFjA9lzXU-ZCwv6o8VxTz52c",
-  authDomain: "marque-state-app.firebaseapp.com",
-  projectId: "marque-state-app",
-  storageBucket: "marque-state-app.appspot.com",
-  messagingSenderId: "344093415336",
-  appId: "1:344093415336:web:abed7aa8ae5527ec78af9d"
+  apiKey: "AIzaSyDmQ8boDi_0kMiU4yYrQ00r7Rc1YIuoO3M",
+  authDomain: "pokids-app.firebaseapp.com",
+  projectId: "pokids-app",
+  storageBucket: "pokids-app.appspot.com",
+  messagingSenderId: "727446444935",
+  appId: "1:727446444935:web:392b6009169c7b5b689122"
 };
 
 // Initialize Firebase
