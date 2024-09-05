@@ -1,8 +1,9 @@
 import { FaLocationDot } from "react-icons/fa6";
 import { LuCircleDollarSign } from "react-icons/lu";
+import { Link } from "react-router-dom";
 
 const AllService = ({ service }) => {
-    const {
+    const { _id,
         service_name,
         service_area,
         price,
@@ -38,12 +39,14 @@ const AllService = ({ service }) => {
                         </div>
                     </div>
                     <div className="flex justify-center items-center gap-5">
-                        <img src={photoURL} alt="" className="w-12 h-12 rounded-full"/>
+                        <img src={photoURL} alt="" className="w-12 h-12 rounded-full" />
                         <p>{displayName}</p>
                         <p>{email}</p>
                     </div>
                     <div>
-                        <button className="rounded-full border border-[#0d87f8] px-4 py-2 text-sm text-[#0d87f8] hover:bg-[#0d87f8] hover:text-white  duration-300 dark:hover:bg-transparent dark:hover:text-[#0d87f8] dark:hover:drop-shadow-[0px_0px_2px_#0d87f8]">View Details</button>
+                        <Link to={`/services/${_id}`}>
+                            <button className="rounded-full border border-[#0d87f8] px-4 py-2 text-sm text-[#0d87f8] hover:bg-[#0d87f8] hover:text-white  duration-300 dark:hover:bg-transparent dark:hover:text-[#0d87f8] dark:hover:drop-shadow-[0px_0px_2px_#0d87f8]">View Details</button>
+                        </Link>
                     </div>
                 </div>
             </div>
