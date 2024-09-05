@@ -17,6 +17,7 @@ const Navber = () => {
         <NavLink to='/'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Home</button></NavLink>
         <NavLink to='/all-service'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Services</button></NavLink>
         <NavLink to='/add-service'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Dashboard</button></NavLink>
+        <NavLink to='/my-list'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">list</button></NavLink>
     </>
     return (
         <div className="home-container">

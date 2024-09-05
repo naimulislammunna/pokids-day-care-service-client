@@ -4,6 +4,8 @@ import { FaLocationDot } from "react-icons/fa6";
 import { LuCircleDollarSign } from "react-icons/lu";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Auth/AuthProvider";
+import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
 
 const ViewDetails = () => {
     const { userInfo } = useContext(AuthContext);
@@ -44,7 +46,14 @@ const ViewDetails = () => {
         }
     })
 
-    const onSubmit = (data) => console.log(data)
+    const onSubmit = async(data) => {
+        await axios.post('http://localhost:4000/booked-service', { data })
+            .then(() => {
+                toast('Booked Service')
+                
+            });
+    }
+
 
     return (
         <>
@@ -88,6 +97,7 @@ const ViewDetails = () => {
             {/* Modal */}
 
             <div>
+                <ToastContainer/>
                 <div className={`fixed flex justify-center items-center z-[100] ${openModal ? 'visible opacity-1' : 'invisible opacity-0'} duration-300 inset-0 w-full h-full`}>
                     <div onClick={(e_) => e_.stopPropagation()} className={`absolute overflow-x-hidden overflow-y-scroll w-full h-full flex justify-center bg-slate-50 drop-shadow-2xl rounded-lg ${openModal ? 'translate-y-0 opacity-1 duration-300' : 'translate-y-32 opacity-0 duration-100'}`}>
                         <div className="sm:w-[70%] w-[90%] px-4 sm:px-6 lg:px-8 py-8">
@@ -238,7 +248,7 @@ const ViewDetails = () => {
                                                 </div>
 
                                             </div>
-                                            <button type="submit" className="px-7 py-2 border border-gray rounded-full hover:bg-orange my-5">Purchase</button>
+                                            <button  onClick={() => { setOpenModal(false) }} type="submit" className="px-7 py-2 border border-gray rounded-full hover:bg-orange my-5">Purchase</button>
 
                                         </form>
                                     </div>
