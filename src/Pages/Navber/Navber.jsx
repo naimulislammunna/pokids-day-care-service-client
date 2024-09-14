@@ -3,16 +3,16 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Auth/AuthProvider";
 
 const Navber = () => {
-    const {userInfo, logOut} = useContext(AuthContext);
+    const { userInfo, logOut } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleLogOut = () => {
         logOut()
-        .then(() =>{
-            navigate('/')
-        })
+            .then(() => {
+                navigate('/')
+            })
     }
-    
+
     const items = <>
         <NavLink to='/'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Home</button></NavLink>
         <NavLink to='/all-service'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Services</button></NavLink>
@@ -20,11 +20,11 @@ const Navber = () => {
         <NavLink to='/my-list'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">list</button></NavLink>
     </>
     return (
-        <div className="home-container">
-            <div className="navbar">
+        <div className="sm:home-container sm:mx-5">
+            <div className="navbar p-0">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <div tabIndex={0} role="butto" className="btn btn-ghost lg:hidden">
+                        <div tabIndex={0} role="butto" className="btn p-1 btn-ghost lg:hidden">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 className="h-5 w-5"
@@ -44,7 +44,9 @@ const Navber = () => {
                             {items}
                         </ul>
                     </div>
-                    <a className=" text-4xl font-bold logo">po<span className="text-orange logo">kids</span></a>
+                    <Link to='/'>
+                        <a className=" text-4xl font-bold logo">po<span className="text-orange logo">kids</span></a>
+                    </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 gap-10">
@@ -52,7 +54,7 @@ const Navber = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-3">
-                {
+                    {
                         userInfo ? <>
                             <button onClick={handleLogOut} className="px-4 py-2 rounded-full bg-white">Sign Out</button>
                             <h3>{userInfo.displayName}</h3>
@@ -70,7 +72,7 @@ const Navber = () => {
                     }
 
 
-                
+
                 </div>
             </div>
         </div>

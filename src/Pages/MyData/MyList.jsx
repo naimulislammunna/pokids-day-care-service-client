@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Auth/AuthProvider";
 import axios from "axios";
 import MyData from "./MyData";
+import { toast, ToastContainer } from "react-toastify";
 
 const MyList = () => {
     const { userInfo } = useContext(AuthContext);
@@ -9,7 +10,6 @@ const MyList = () => {
 
     const [myData, setMyData] = useState([]);
     const email = userInfo.email;
-    console.log('my data', myData);
    
     useEffect(() => {  
         if (!email) {
@@ -27,8 +27,28 @@ const MyList = () => {
         }    
     }, [email])
 
+    const handleDelete = (id) => {
+
+        const procced = confirm('Are you sure delete');
+        if (procced) {
+            fetch(`http://localhost:4000/my-services/${id}`,{
+                method: "DELETE"
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if(data.deletedCount > 0){
+                        const remaining = myData.filter(item => item._id !== id);
+                        setMyData(remaining);
+                        toast('Delete Service')
+                    }
+                })
+                .catch(err => console.log(err))
+        }
+    }
+
     return (
         <div className="home-container">
+            <ToastContainer/>
             <div className="overflow-x-auto">
                 <table className="min-w-[90%] shadow-md border mx-auto border-gray-100 my-6">
                     <thead>
@@ -41,7 +61,7 @@ const MyList = () => {
                     </thead>
                     <tbody>
                         {
-                            myData?.map(item => <MyData key={item._id} item={item}></MyData>)
+                            myData?.map(item => <MyData key={item._id} item={item} handleDelete={handleDelete}></MyData>)
                         }
                     </tbody>
                 </table>
