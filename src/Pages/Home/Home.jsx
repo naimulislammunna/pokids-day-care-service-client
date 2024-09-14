@@ -1,13 +1,13 @@
 import AboutUs from "../AboutUs/AboutUs";
 import Specificity from "../AboutUs/Specificity";
 import Banner from "../Banner/Banner";
-import Services from "../Services/Services";
+import PopulerServices from "../Services/PopulerServices";
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <Services></Services>
+            <PopulerServices></PopulerServices>
             <AboutUs></AboutUs>
             <Specificity></Specificity>
         </div>

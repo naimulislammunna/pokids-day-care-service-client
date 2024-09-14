@@ -13,11 +13,21 @@ const Navber = () => {
             })
     }
 
+
     const items = <>
         <NavLink to='/'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Home</button></NavLink>
         <NavLink to='/all-service'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Services</button></NavLink>
-        <NavLink to='/add-service'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Dashboard</button></NavLink>
-        <NavLink to='/my-list'><button className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">list</button></NavLink>
+        {
+            userInfo?.email && <div className="dropdown">
+                <div tabIndex={0} role="button" className="text-gray text-lg font-semibold hover:border-b-2 hover:border-orange">Dashboard</div>
+                <ul tabIndex={0} className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                    <li><Link to='/add-service'>Add Service</Link></li>
+                    <li><Link to='/my-list'>Manage Service</Link></li>
+                    <li><Link to='/booked-services'>Booked-Services</Link></li>
+                    <li><Link to='/service-to-do'>Service-To-Do</Link></li>
+                </ul>
+            </div>
+        }
     </>
     return (
         <div className="sm:home-container sm:mx-5">
