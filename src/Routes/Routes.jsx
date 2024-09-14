@@ -10,6 +10,7 @@ import PrivateRoute from "./PrivateRoute";
 import ViewDetails from "../Pages/Services/ViewDetails";
 import MyList from "../Pages/MyData/MyList";
 import ErrorPage from "../Components/ErrorPage";
+import BookedService from "../Pages/Services/BookedService";
 
 const router = createBrowserRouter([
     {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/add-service',
-                element: <AddService/>
+                element: <PrivateRoute><AddService/></PrivateRoute>
             },
             {
                 path: '/all-service',
@@ -43,7 +44,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/my-list',
-                element: <MyList></MyList>
+                element: <PrivateRoute><MyList></MyList></PrivateRoute>
+            },
+            {
+                path: '/booked-services',
+                element: <PrivateRoute><BookedService></BookedService></PrivateRoute>
             },
             {
                 path: '/services/:id',

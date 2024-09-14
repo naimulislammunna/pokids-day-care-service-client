@@ -1,41 +1,27 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../Auth/AuthProvider";
-import axios from "axios";
-import MyData from "./MyData";
-import { toast, ToastContainer } from "react-toastify";
 import { useQuery } from "react-query";
+import axios from "axios";
 import Loader from "../../Components/Loader";
+import BookedData from "./BookedData";
 
-const MyList = () => {
+const BookedService = () => {
     const { userInfo } = useContext(AuthContext);
     const email = userInfo.email;
 
 
-    const { data, isLoading, refetch} = useQuery({
-        queryKey: ['my-post'],
+    const { data, isLoading} = useQuery({
+        queryKey: ['booked-data'],
         queryFn: async () => {
-            const response = await axios.get(` http://localhost:4000/my-services?email=${email}`)
+            const response = await axios.get(` http://localhost:4000/booked-service?email=${email}`)
             return response.data;
         }
     })
-    if(isLoading) return <Loader/>
 
-    const handleDelete = (id) => {
-        const procced = confirm('Are you sure delete');
-        if (procced) {
-            axios.delete(`http://localhost:4000/my-services/${id}`)
-            .then(res => {
-                if(res.data.deletedCount > 0){
-                    toast('Delete Successfully')
-                    refetch()
-                }
-            })
-        }
-    }
+    if(isLoading) return <Loader/>
 
     return (
         <div className="home-container">
-            <ToastContainer />
             <div className="overflow-x-auto">
                 <table className="min-w-[90%] shadow-md border mx-auto border-gray-100 my-6">
                     <thead>
@@ -43,12 +29,12 @@ const MyList = () => {
                             <th className="py-4 px-6 text-lg text-left border-b">Image</th>
                             <th className="py-4 px-6 text-lg text-left border-b">Service Name</th>
                             <th className="py-4 px-6 text-lg text-left border-b">Location</th>
-                            <th className="py-4 px-6 text-lg text-left border-b">Update/Delete</th>
+                            <th className="py-4 px-6 text-lg text-left border-b">Provider Name</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            data?.map(item => <MyData key={item._id} item={item} handleDelete={handleDelete}></MyData>)
+                            data?.map(item => <BookedData key={item._id} item={item}></BookedData>)
                         }
                     </tbody>
                 </table>
@@ -57,4 +43,4 @@ const MyList = () => {
     );
 };
 
-export default MyList;
+export default BookedService;
