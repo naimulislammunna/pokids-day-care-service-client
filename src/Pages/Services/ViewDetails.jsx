@@ -47,7 +47,7 @@ const ViewDetails = () => {
     })
 
     const onSubmit = async(data) => {
-        await axios.post('http://localhost:4000/booked-service', { data })
+        await axios.post('https://pokids-server.vercel.app/booked-service', { data })
             .then(() => {
                 toast('Booked Service')
                 
@@ -104,7 +104,7 @@ const ViewDetails = () => {
                             <button onClick={() => { setOpenModal(false) }} className="mr-0 mx-auto flex bg-slate-950 text-white px-3 py-2 rounded-lg mb-6">Close</button>
                             <div className="w-full">
                                 <div className="bg-white border rounded-lg border-cyan-800 my-10 w-full mx-auto">
-                                    <div className="mx-20 py-10">
+                                    <div className="sm:mx-20 py-10">
                                         <form action="" onSubmit={handleSubmit(onSubmit)}>
                                             <div className="grid grid-cols-2 gap-4">
                                                 <div className="space-y-2 text-sm text-cyan-700 dark:text-cyan-300">

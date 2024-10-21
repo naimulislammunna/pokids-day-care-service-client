@@ -5,7 +5,7 @@ const PopulerServices = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:4000/services')
+        fetch('https://pokids-server.vercel.app/services')
         .then(res => res.json())
         .then(data => setServices(data))
     }, [])

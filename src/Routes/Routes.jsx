@@ -11,6 +11,7 @@ import ViewDetails from "../Pages/Services/ViewDetails";
 import MyList from "../Pages/MyData/MyList";
 import ErrorPage from "../Components/ErrorPage";
 import BookedService from "../Pages/Services/BookedService";
+import UpdateService from "../Pages/Services/UpdateService";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><AddService/></PrivateRoute>
             },
             {
+                path: '/update-service/:id',
+                element: <PrivateRoute><UpdateService/></PrivateRoute>
+            },
+            {
                 path: '/all-service',
                 element: <AllServices></AllServices>
             },
@@ -56,7 +61,7 @@ const router = createBrowserRouter([
                     <PrivateRoute>
                         <ViewDetails></ViewDetails>
                     </PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:4000/services/${params.id}`)
+                loader: ({ params }) => fetch(`https://pokids-server.vercel.app/services/${params.id}`)
             }
         ]
     }

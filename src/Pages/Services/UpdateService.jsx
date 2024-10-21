@@ -2,10 +2,11 @@ import axios from "axios";
 import { useContext } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { AuthContext } from "../../Auth/AuthProvider";
-
-const AddService = () => {
-    const {userInfo} = useContext(AuthContext);
-    const {displayName, photoURL, email} = userInfo;
+import { useParams } from "react-router-dom";
+const UpdateService = () => {
+    const { userInfo } = useContext(AuthContext);
+    const { displayName, photoURL, email } = userInfo;
+    const { id } = useParams();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -16,12 +17,12 @@ const AddService = () => {
         const image_url = form.imageUrl.value;
         const description = form.description.value;
 
-         await axios.post('https://pokids-server.vercel.app/add-service', { service_name,service_area , price,description, image_url, email,  displayName, photoURL })
+        await axios.patch(`https://pokids-server.vercel.app/update-service/${id}`, { service_name, service_area, price, description, image_url, email, displayName, photoURL })
             .then(() => {
-                toast('Post Complete')
+                toast('Update Complete')
                 form.reset();
             });
-            
+
     }
 
     return (
@@ -29,8 +30,9 @@ const AddService = () => {
             <div>
                 <ToastContainer />
                 <div className="home-container">
-                    <div className="bg-white border rounded-lg border-cyan-800 my-10 w-full sm:w-[75%] mx-auto">
-                        <div className="sm:mx-20 py-10 px-2">
+                    <h2 className="text-center text-xl text-cyan-700 font-bold my-5">Update Your Service</h2>
+                    <div className="bg-white border rounded-lg border-cyan-800 my-10 w-[75%] mx-auto">
+                        <div className="mx-20 py-10">
                             <form action="" onSubmit={handleSubmit}>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="space-y-2 text-sm text-cyan-700 dark:text-cyan-300">
@@ -96,7 +98,7 @@ const AddService = () => {
                                         type="text"
                                     />
                                 </div>
-                                <button type="submit" className="px-7 py-2 border border-gray rounded-full hover:bg-orange">Submit</button>
+                                <button type="submit" className="px-7 py-2 border border-gray rounded-full hover:bg-orange">Update</button>
 
                             </form>
                         </div>
@@ -108,4 +110,4 @@ const AddService = () => {
     );
 };
 
-export default AddService;
+export default UpdateService;

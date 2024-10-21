@@ -13,7 +13,7 @@ const BookedService = () => {
     const { data, isLoading} = useQuery({
         queryKey: ['booked-data'],
         queryFn: async () => {
-            const response = await axios.get(` http://localhost:4000/booked-service?email=${email}`)
+            const response = await axios.get(` https://pokids-server.vercel.app/booked-service?email=${email}`)
             return response.data;
         }
     })
